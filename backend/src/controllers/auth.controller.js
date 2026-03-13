@@ -56,3 +56,16 @@ export const signinController = asyncHandler(async (req, res) => {
       }),
     );
 });
+
+export const getUserSessionController = asyncHandler(async (req, res) => {
+  const user = req.user;
+
+  return res.status(200).json(
+    new ApiResponse(200, {
+      data: {
+        id: user._id,
+        email: user.email,
+      },
+    }),
+  );
+});

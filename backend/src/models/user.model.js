@@ -25,11 +25,11 @@ const userSchema = new mongoose.Schema(
       generateToken() {
         return jwt.sign(
           {
-            email: this.email,
+            id: this._id,
           },
           process.env.JWT_SECRET,
           {
-            expiresIn: "10d",
+            expiresIn: "1m",
           },
         );
       },
