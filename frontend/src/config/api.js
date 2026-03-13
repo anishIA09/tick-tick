@@ -18,6 +18,10 @@ export const get = ({ url = "", params, headers }) =>
         resolve(result);
       })
       .catch((error) => {
+        if (error.response?.status === 401) {
+          window.location.reload();
+        }
+
         reject(error);
       });
   });
