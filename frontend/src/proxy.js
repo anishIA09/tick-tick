@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-const PRIVATE_ROUTES = ["/campaigns", "/dashboard", "/locations", "/plans"];
+const PRIVATE_ROUTES = ["/campaigns", "/dashboard", "/locations"];
 const AUTH_ROUTES = ["/signup", "/signin"];
 
 export function proxy(req) {
