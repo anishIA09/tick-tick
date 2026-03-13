@@ -2,6 +2,7 @@
 
 import { post } from "@/config/api";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
 const SignupPage = () => {
@@ -10,11 +11,14 @@ const SignupPage = () => {
     password: "",
   });
 
+  const router = useRouter();
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
       const response = await post({ url: "/auth/signin", body: formData });
+      router.replace("/dashboard");
     } catch (error) {
       console.log("Error while signing up user", error);
     }
