@@ -14,6 +14,10 @@ const featureSchema = new mongoose.Schema({
     unique: true,
   },
   pricing: {
+    daily: {
+      type: Number,
+      required: true,
+    },
     monthly: {
       type: Number,
       required: true,
