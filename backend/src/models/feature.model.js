@@ -15,20 +15,32 @@ const featureSchema = new mongoose.Schema({
   },
   pricing: {
     daily: {
-      type: Number,
-      required: true,
+      value: Number,
+      isRecommended: {
+        type: Boolean,
+        default: false,
+      },
     },
     monthly: {
-      type: Number,
-      required: true,
+      value: Number,
+      isRecommended: {
+        type: Boolean,
+        default: false,
+      },
     },
     halfYearly: {
-      type: Number,
-      required: true,
+      value: Number,
+      isRecommended: {
+        type: Boolean,
+        default: false,
+      },
     },
     yearly: {
-      type: Number,
-      required: true,
+      value: Number,
+      isRecommended: {
+        type: Boolean,
+        default: false,
+      },
     },
   },
 });
