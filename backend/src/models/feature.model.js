@@ -6,30 +6,17 @@ const featureSchema = new mongoose.Schema({
     trim: true,
     required: true,
   },
+  description: {
+    type: String,
+    required: true,
+    trim: true,
+  },
   code: {
     type: String,
     trim: true,
     required: true,
     uppercase: true,
     unique: true,
-  },
-  pricing: {
-    daily: {
-      type: Number,
-      required: true,
-    },
-    monthly: {
-      type: Number,
-      required: true,
-    },
-    halfYearly: {
-      type: Number,
-      required: true,
-    },
-    yearly: {
-      type: Number,
-      required: true,
-    },
   },
 });
 
