@@ -5,26 +5,31 @@ const orderSchema = new mongoose.Schema(
     userId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
+      required: true,
     },
-    subscriptionId: {
+    paymentType: {
+      type: String,
+      enum: ["SUBSCRIPTION", "CAMPAIGN"],
+      required: true,
+    },
+    referenceId: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "Subscription",
     },
     razorpayOrderId: {
       type: String,
-      reqired: true,
+      required: true,
     },
     razorpayPaymentId: {
       type: String,
     },
-    status: {
-      type: String,
-      enum: ["created", "paid", "failed"],
-      deault: "created",
-    },
     amount: {
       type: Number,
       required: true,
+    },
+    status: {
+      type: String,
+      enum: ["CREATED", "SUCCESS", "FAILED"],
+      default: "CREATED",
     },
   },
   {
