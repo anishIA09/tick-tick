@@ -37,7 +37,7 @@ export const getPlansController = asyncHandler(async (req, res) => {
     ...plan,
     features: plan.features.map((feature) => {
       return {
-        _id: feature.featureId.id,
+        _id: feature.featureId._id,
         name: feature.featureId.name,
         description: feature.featureId.description,
         code: feature.featureId.code,
