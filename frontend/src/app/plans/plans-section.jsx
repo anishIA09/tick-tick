@@ -122,7 +122,7 @@ const PlanCard = ({ plan }) => {
     }
 
     case "HALF_YEARLY": {
-      billingLabel = "6 mo";
+      billingLabel = "6mo";
       break;
     }
 
