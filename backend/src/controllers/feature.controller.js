@@ -4,7 +4,7 @@ import { asyncHandler } from "../lib/async-handler.js";
 import { Feature } from "../models/feature.model.js";
 
 export const createFeatureController = asyncHandler(async (req, res) => {
-  const { name, code, pricing } = req.body;
+  const { name, code, description } = req.body;
 
   const existingFeature = await Feature.findOne({ code });
 
@@ -15,7 +15,7 @@ export const createFeatureController = asyncHandler(async (req, res) => {
   await Feature.create({
     name,
     code,
-    pricing,
+    description,
   });
 
   return res
